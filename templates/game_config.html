@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container d-flex flex-column min-vh-100 justify-content-between">
+    <div class="row text-center">
+        <h1 class="title"><a href="/">TriviaFight</a></h1>
+    </div>
+
+    <div class="row">
+        <h2 class="game-message">Choose your category</h2>
+    </div>
+
+    <form action="/game_config" method = "post">
+        <div class="row justify-content-center text-center mb-3">
+            <div class="col-auto d-flex flex-row text-center">
+                <label class="d-flex" for="difficulty-btn" id="difficulty-label" style="align-items: center;">Difficulty:</label>
+                <select class="form-select" id="difficulty-btn" name="difficulty">
+                    <option value="">Any</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row categories-container d-flex flex-wrap justify-content-center mb-5">
+            {% for category in category_names %}
+                <button type="submit" class="category-btn btn btn-outline-dark btn-lg" id="{{category}}" name="category" value="{{category}}"> {{category}} </button>
+            {% endfor %}
+            <button type="submit" class="category-btn btn btn-outline-dark btn-lg justify-content-center" id="{{category}}" name="category" value="Random">Random</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container d-flex flex-column min-vh-100 text-center justify-content-between">
+    <div class="row">
+        <h1 class="title mb-5"><a href="/">TriviaFight</a></h1>
+    </div>
+
+    <div class="row mb-3">
+
+        <h4 class="fs-1 mb-5">TriviaFight is a fun game of answering questions!</h4>
+
+        <b class="fs-5">1-player mode</b>
+        <p class="fs-5">Challenge yourself on single-player. If in the end you have more correct than incorrect answers, you win!</p>
+        
+        <b class="fs-5">2-player mode</b>
+        <p class="fs-5">Go head-to-head with a friend. Simply choose 2-player mode, pick a category and you’re set. 
+            Each player will get different questions on the chosen topic. Whoever gets the most correct answers, wins!</p>
+    
+        <b class="fs-5">Categories / Difficulty</b>
+        <p class="fs-5">You can pick the category and the difficulty you want right before the game starts.
+            If the difficulty you choose is “Any”, you will get questions with randomly chosen difficulties. 
+            Similarly, if the category you choose is “Random”, you will get questions from random categories.</p>
+
+        <b class="fs-5">Options</b>
+        <p class="fs-5"> You can change the names of the players as well as the number of questions in the game from the “Options” menu.</p>
+    </div>
+    
+    <div class="row d-flex justify-content-center text-center my-3">
+        <div class="col-auto" method="post">
+            <form action="/">
+                <input type="submit" class="menu-btn btn btn-primary" name="menu" value="Main menu">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

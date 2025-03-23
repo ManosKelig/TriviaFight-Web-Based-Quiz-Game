@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container d-flex flex-column min-vh-100 justify-content-between">
+    <div class="row mb-3">
+        <h1 class="title"><a href="/">TriviaFight</a></h1>
+    </div>
+
+    <div class="row my-4">
+        {% if session.score.p1_correct > session.score.p1_incorrect %}
+            <h1 class="text-center text-success fw-bold" style="font-size: 6rem;">You win!</h1>
+        {% elif session.score.p1_correct  < session.score.p1_incorrect %}
+            <h1 class="text-center text-danger fw-bold" style="font-size: 6rem;">You lose!</h1>
+        {% elif session.score.p1_correct  == session.score.p1_incorrect %}
+            <h1 class="text-center text-warning fw-bold" style="font-size: 6rem;">Draw!</h1>
+        {% endif %}
+    </div>
+        
+    <div class="row justify-content-center text-center">
+        <div class="col-auto card bg-primary text-white py-4 px-5">
+            <div class="card-body">
+                <h5 class="card-title fw-bold score-text">{{session.p1_name}}</h5>
+                <p class="card-text score-text">Correct answers: {{session.score.p1_correct}}</p>
+                <p class="card-text score-text">Incorrect answers: {{session.score.p1_incorrect}}</p>
+            </div>
+        </div>
+    </div>
+
+    <form action="/game_session" method="post">
+        <div class="row text-center my-5" id="responsive-menu">
+            <div class="col">
+                <button type="submit" class="menu-btn btn btn-info" name="next" value="Play again">Play again</button>
+            </div>
+            <div class="col">
+                <button type="submit" class="menu-btn btn btn-warning" name="next" value="Main Menu">Main Menu</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+
+{% endblock %}

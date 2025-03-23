@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container d-flex flex-column min-vh-100 justify-content-between">
+    <div class="row">
+        <h1 class="title"><a href="/">TriviaFight</a></h1>
+    </div>
+
+    <div class="row text-center justify-content-center m-2">
+        <div class="col-auto">
+            {% if session.active_player == 1 %}
+                <h2 class="text-primary fw-bold data-text">{{session.p1_name}}</h2>
+            {% elif session.active_player == 2 %}
+                <h2 class="text-success fw-bold data-text">{{session.p2_name}}</h2>
+            {% endif %}
+            <h5 class="data-text">Category - {{question_data.category|safe}}</h5>
+            <p class="data-text text-capitalize">Difficulty - {{question_data.difficulty}}</p>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <h2 class="question">{{question_data.question|safe}}</h2>
+    </div>
+
+    <div class="row justify-content-center text-center">
+        <form action="/game_session" method="post">
+            <div class="d-flex flex-column align-items-center">
+                {% if question_data.type == "multiple"%}
+                <button type="submit" class="answer-btn btn btn-info mb-3" name="option" value="{{options[0]|safe}}" required>{{options[0]|safe}}</button>
+                <button type="submit" class="answer-btn btn btn-success mb-3" name="option" value="{{options[1]|safe}}" required>{{options[1]|safe}}</button>
+                <button type="submit" class="answer-btn btn btn-warning mb-3" name="option" value="{{options[2]|safe}}" required>{{options[2]|safe}}</button>
+                <button type="submit" class="answer-btn btn btn-danger" name="option" value="{{options[3]|safe}}" required>{{options[3]|safe}}</button>
+                {% elif question_data.type == "boolean"%}
+                <button type="submit" class="true-false-btn btn btn-success mb-3" name="option" value="True" required>True</button>
+                <button type="submit" class="true-false-btn btn btn-danger" name="option" value="False" required>False</button>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <p class="col question-count my-3"> Question {{question_number}} out of {{session.questions_number}}</p>
+    </div>
+</div>
+{% endblock %}

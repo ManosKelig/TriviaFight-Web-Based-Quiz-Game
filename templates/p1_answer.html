@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container d-flex flex-column min-vh-100 justify-content-between">
+    <div class="row mb-4">
+        <h1 class="title"><a href="/">TriviaFight</a></h1>
+    </div>
+
+    {% if session.answer == "correct" %}
+    <div class="row mb-2">
+        <h2 class="answer-response text-success fw-bold">Correct!</h2>
+    </div>
+    {% elif session.answer == "incorrect" %}
+    <div class="row mb-2">
+        <h2 class="answer-response text-danger fw-bold">Incorrect</h2>
+    </div>
+    {% endif %}
+    
+    <div class="row">
+        <h4 class="text-center fs-2">Correct answer: {{session.current_correct_answer|safe}}</h4>
+    </div>
+    
+    <div class="row justify-content-center text-center mb-3">
+        <div class="col-auto card bg-primary text-white py-4 px-5">
+            <div class="card-body">
+                <h5 class="card-title fw-bold score-text">{{session.p1_name}}</h5>
+                <p class="card-text score-text">Correct answers: {{session.score.p1_correct}}</p>
+                <p class="card-text score-text">Incorrect answers: {{session.score.p1_incorrect}}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="next-container mb-3">
+        <form action="/game_session">
+            <button type="submit" class="next-btn btn btn-warning btn-lg" value="Next">Next</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

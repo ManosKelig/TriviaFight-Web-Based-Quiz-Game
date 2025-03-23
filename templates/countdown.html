@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container d-flex flex-column min-vh-100 text-center flex-grow-1">
+    <div class="row mb-5">
+            <h1 class="title"><a href="/">TriviaFight</a></h1>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+                <div>
+                    <h1 id="timer"></h1>
+                </div>
+            
+                <form action="/countdown" method="post" id="game_launch"></form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+        let countdown = 3; // Start at 3 seconds
+
+function startCountdown() {
+    let timerElement = document.getElementById("timer");
+    let interval = setInterval(() => {
+        timerElement.innerText = countdown;
+        countdown--;
+
+        if (countdown < 0) {
+            clearInterval(interval);
+            document.getElementById("timer").innerText = "Let's go!";
+
+            document.getElementById("game_launch").submit();
+        }
+    }, 1000);
+}
+
+window.onload = startCountdown;
+</script>
+
+{% endblock %}

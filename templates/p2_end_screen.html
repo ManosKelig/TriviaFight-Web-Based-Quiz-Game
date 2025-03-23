@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container d-flex flex-column min-vh-100">
+    <div class="row mb-4">
+        <h1 class="title"><a href="/">TriviaFight</a></h1>
+    </div>
+
+    <div class="row mb-4">
+        {% if session.score.p1_correct > session.score.p2_correct %}
+            <h1 class="answer-response text-center text-primary fw-bold" id="result">{{session.p1_name}} wins!</h1>
+        {% elif session.score.p1_correct < session.score.p2_correct %}
+            <h1 class="answer-response text-center text-success fw-bold" id="result">{{session.p2_name}} wins!</h1>
+        {% elif session.score.p1_correct  == session.score.p2_correct %}
+            <h1 class="answer-response text-center text-warning fw-bold" id="result">Draw!</h1>
+        
+        {% endif %}
+    </div>
+        
+    <div class="row justify-content-center text-center">
+        <div class="col-auto card bg-primary text-white py-4 px-5 m-3">
+            <div class="card-body">
+                <h5 class="card-title fw-bold score-text">{{session.p1_name}}</h5>
+                <p class="card-text score-text">Correct answers: {{session.score.p1_correct}}</p>
+                <p class="card-text score-text">Incorrect answers: {{session.score.p1_incorrect}}</p>
+            </div>
+        </div>
+
+        <div class="col-auto card bg-success text-white py-4 px-5 m-3">
+            <div class="card-body">
+                <h5 class="card-title fw-bold score-text">{{session.p2_name}}</h5>
+                <p class="card-text">Correct answers: {{session.score.p2_correct}}</p>
+                <p class="card-text">Incorrect answers: {{session.score.p2_incorrect}}</p>
+            </div>
+        </div>
+    </div>
+        
+    <form action="/game_session" method="post">
+        <div class="row text-center my-5" id="responsive-menu">
+            <div class="col">
+                <input type="submit" class="menu-btn btn btn-info" name="next" value="Play again">
+            </div>
+            <div class="col">
+                <input type="submit" class="menu-btn btn btn-warning" name="next" value="Main Menu">
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
