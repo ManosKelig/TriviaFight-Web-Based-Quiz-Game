@@ -378,7 +378,6 @@ def game_session():
 
         return redirect(url_for("answer"))
 
-
 @app.route("/answer", methods = ["GET", "POST"])
 def answer():
 
