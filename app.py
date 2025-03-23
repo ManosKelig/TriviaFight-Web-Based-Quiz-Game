@@ -235,8 +235,6 @@ def countdown():
         #Get questions from selected category
         else:
 
-            print(session["categories"])
-
             #Find category id by matching selected category name to category name from api
             for category in session["categories"]:
                 if category["name"] == session["chosen_category"]:
