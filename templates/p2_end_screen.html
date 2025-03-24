@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<div class="container d-flex flex-column min-vh-100">
-    <div class="row mb-4">
+<div class="container d-flex flex-column min-vh-100 justify-content-between">
+    <div class="row mb-3">
         <h1 class="title"><a href="/">TriviaFight</a></h1>
     </div>
 
-    <div class="row mb-4">
+    <div class="row my-4">
         {% if session.score.p1_correct > session.score.p2_correct %}
             <h1 class="answer-response text-center text-primary fw-bold" id="result">{{session.p1_name}} wins!</h1>
         {% elif session.score.p1_correct < session.score.p2_correct %}
