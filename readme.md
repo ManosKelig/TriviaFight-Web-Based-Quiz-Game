@@ -1,5 +1,5 @@
 # TriviaFight
-## Video Demo:  <URL HERE>
+## Video Demo:  [https://youtu.be/9_tWAWa9wmE](https://youtu.be/9_tWAWa9wmE)
 ## Description:
 
 TriviaFight is a fun web-based quiz game for 1 to 2 players. It uses questions from the [Open Trivia Database](https://opentdb.com/) and players can choose from a wide range of categories as well as the difficulty of the questions. 
