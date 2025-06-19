@@ -71,12 +71,21 @@ This file serves as an example for the actual .env file that needs to be include
 This file includes the things that should be ignored when updating the repository on GitHub. It is mainly there so that future updates can be made without changing environment variables or adding unecessary files (like "flask_sessions") to the repository.
  
 ## How to install and run
+
+### Clone repository
+
+On cmd:
+
+    git clone https://github.com/ManosKelig/TriviaFight-Web-Based-Quiz-Game
+
+then:
+
+    cd TriviaFight-Web-Based-Quiz-Game
+
 ###  Setup virtual environment 
 To run this application it is recommended that the user setup and activate a virtual environment so that the dependencies of the application can be installed without conflicting with other versions.
 
 #### Create the environment
-
-On cmd:
 
     python -m venv venv
 
@@ -87,7 +96,7 @@ On cmd:
 ### Install dependencies and run
 After the virtual environment has been set up, it necessary to install the dependencies that are needed for the app to run. The requirements.txt file can be used to install them through the terminal. To do this, execute the following line in the virtual environment terminal 
 
-> pip install -r requirements.txt. 
+    pip install -r requirements.txt. 
 
 After the dependencies have been installed, run "app.py" from the terminal.
 
