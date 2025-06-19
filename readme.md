@@ -74,8 +74,16 @@ This file includes the things that should be ignored when updating the repositor
 ###  Setup virtual environment 
 To run this application it is recommended that the user setup and activate a virtual environment so that the dependencies of the application can be installed without conflicting with other versions.
 
-Instructions on the setup of a virtual environment can be found [here](https://flask.palletsprojects.com/en/stable/installation/)
+#### Create the environment
 
+On cmd:
+
+    python -m venv venv
+
+#### Activate environment
+
+    venv\Scripts\activate
+    
 ### Install dependencies and run
 After the virtual environment has been set up, it necessary to install the dependencies that are needed for the app to run. The requirements.txt file can be used to install them through the terminal. To do this, execute the following line in the virtual environment terminal 
 
