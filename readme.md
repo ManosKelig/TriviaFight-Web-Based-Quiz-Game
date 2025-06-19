@@ -65,7 +65,7 @@ Finally, should an appropriate API be found, AI integration is a feature that co
  This is the file that includes all the necessary dependencies that are needed to setup the application.
 
 ### .env.example
-This file serves as an example for the actual .env file that needs to be included by the user in order ot successfully run the app. It contains only two lines. The first one is the flask secret key that the user needs to generate. The second one is optional and it toogles debug mode for flask.
+This file serves as an example for the actual .env file that needs to be included by the user in order to successfully run the app. It contains only two lines. The first one is the flask secret key that the user needs to generate. The second one is optional and it toogles debug mode for flask.
 
 ### .gitignore
 This file includes the things that should be ignored when updating the repository on GitHub. It is mainly there so that future updates can be made without changing environment variables or adding unecessary files (like "flask_sessions") to the repository.
@@ -92,13 +92,18 @@ To run this application it is recommended that the user setup and activate a vir
 #### Activate environment
 
     venv\Scripts\activate
-    
+
+### Set a secret key
+
+Change the name of '.env.example' to '.env' copy the output of 'secret_key_generator.py'.
+
 ### Install dependencies and run
-After the virtual environment has been set up, it necessary to install the dependencies that are needed for the app to run. The requirements.txt file can be used to install them through the terminal. To do this, execute the following line in the virtual environment terminal 
+After the virtual environment and the key have been set up, it necessary to install the dependencies that are needed for the app to run. The requirements.txt file can be used to install them through the terminal. To do this, execute the following line in the virtual environment terminal 
 
     pip install -r requirements.txt. 
 
 After the dependencies have been installed, run "app.py" from the terminal.
+
 
 ## How to use the project
 
