@@ -2,7 +2,7 @@
 ## Video Demo:  [https://youtu.be/9_tWAWa9wmE](https://youtu.be/9_tWAWa9wmE)
 ## Description:
 
-TriviaFight is a fun web-based quiz game for 1 to 2 players. It uses questions from the [Open Trivia Database](https://opentdb.com/) and players can choose from a wide range of categories as well as the difficulty of the questions. 
+TriviaFight is a fun web-based quiz game for 1 to 2 players. It uses questions from the [Open Trivia Database](https://opentdb.com/) API and players can choose from a wide range of categories as well as the difficulty of the questions. 
 
 There is a "single player" mode where a player answers a set number of questions trying to get more correct than incorrect answers and also a "multiplayer" mode where players take turns on the same device trying to score more correct answers than the other player. The questions follow a "multiple choice" and "true/false" format.
 
@@ -13,7 +13,7 @@ The back-end of TriviaFight is written in Python utilising the Flask framework. 
 > [!NOTE]
 > Since this is a personal project focusing on the use of Python/Flask along with the front-end elements, data is stored locally for convenience. In its "production" form, this project would utilise a temporary SQL database for data storage, however database integration falls outside the scope of the endeavour. It remains a feature to be added as an update.
 
-The app has also been deployed on [Render](https://render.com/) with the use of [gunicorn](https://gunicorn.org/)
+The app has also been deployed on [Render](https://render.com/) with the use of [gunicorn](https://gunicorn.org/). TriviaFight on Render can be accessed with [this link](https://triviafight.onrender.com/)
 
 The front-end of TriviaFight utilises HTML (in conjunction with [Jinja2](https://jinja.palletsprojects.com/en/stable/)) and CSS. Moreover, the [Bootstrap 5](https://getbootstrap.com/) framework is used to provide a clean and minimalist look to the pages while keeping the code neatly organised. The website works on PC, tablets and smartphones through responsive design and media queries. There are also 2 Javascript functions within the code: 1. A slider on the options menu and 2. a countdown function that triggers an API call and starts the game.
 
