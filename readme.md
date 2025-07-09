@@ -29,7 +29,7 @@ Finally, should an appropriate API be found, AI integration is a feature that co
  This is the main back-end logic behind TriviaFight. It is a Python app that utilizes the Flask framework to organize the different HTML pages of the app (listed below). As mentioned before, important information (such as player names, number of questions etc) along with API data (questions and options) are stored in flask "Sessions" which are set up to use local storage in the filesystem. As a flask app, the application also needs a secret key which can be found in the ".env" file and the values are passed into the app with the use of the "dotenv" library. Finally, the API calls are handled through the "Requests" library.
 
 ### layout.html
- This is the HTML template on which the rest of the pages are built. It utilizes Jinja syntax so that the rest of the pages can be rendered when called upon. It utilizes responsive design (insert code) and it introduces the Bootstrap 5 framework (code).
+ This is the HTML template on which the rest of the pages are built. It utilizes Jinja syntax so that the rest of the pages can be rendered when called upon. It utilizes responsive design and it introduces the Bootstrap 5 framework.
 
 ### index.html
  This is the main menu page of TriviaFight. It includes the Play, Instructions and Options buttons. Also, the error messages from other pages of the app are displayed here at the bottom of the page through flask alerts. At any point (as with the other pages as well) the user can click on the TriviaFight logo to return to the main screen.
@@ -69,6 +69,10 @@ This file serves as an example for the actual .env file that needs to be include
 
 ### .gitignore
 This file includes the things that should be ignored when updating the repository on GitHub. It is mainly there so that future updates can be made without changing environment variables or adding unecessary files (like "flask_sessions") to the repository.
+
+### secret_key_generator.py
+
+The user should run this python script to get a new secret key that can be copied and pasted on the .env file so that Flask can function properly.
  
 ## How to install and run
 
@@ -81,6 +85,8 @@ On cmd:
 then:
 
     cd TriviaFight-Web-Based-Quiz-Game
+
+or download from GitHub
 
 ###  Setup virtual environment 
 To run this application it is recommended that the user setup and activate a virtual environment so that the dependencies of the application can be installed without conflicting with other versions.
@@ -110,3 +116,9 @@ After the dependencies have been installed, run "app.py" from the terminal.
 Using TriviaFight is straightforward. After completing the setup and running "app.py" from the terminal, the user should go to [http://127.0.0.1:5000](http://127.0.0.1:5000) on their browser.
 
 From there, the user can easily navigate through the different pages by using the bootstrap buttons and the other interactive elements that TriviaFight contains.
+
+## License
+
+## License
+
+This project is not licensed for reuse. It is publicly available for demonstration and portfolio purposes only.
