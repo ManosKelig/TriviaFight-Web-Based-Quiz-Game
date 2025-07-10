@@ -2,17 +2,17 @@
 
 {% block content %}
 
-<div class="container d-flex flex-column min-vh-100 justify-content-between">
+<div class="container d-flex flex-column min-vh-100">
     <div class="row text-center">
-        <h1 class="title"><a href="/">TriviaFight</a></h1>
+        <h1 class="title mb-5"><a href="/">TriviaFight</a></h1>
     </div>
 
-    <div class="row text-center mb-5">
+    <div class="row text-center my-5">
         <h2 class="game-message">Choose game mode</h2>
     </div>
 
     <form action="/game_mode" method="post">
-        <div class="row text-center mt-5" id="responsive-menu">
+        <div class="row text-center my-5" id="responsive-menu">
             <div class="col">
                 <button type="submit" class="menu-btn btn btn-primary" name="game_mode" value="1 player">1 player</button>
             </div>
@@ -22,24 +22,6 @@
         </div>
     </form>
 
-    <div class="row">
-        <div class="col">
-            {% with messages = get_flashed_messages(with_categories=True) %}
-            {% if messages %}
-                <ul class="list-unstyled">
-                    {% for category, message in messages %}
-                        {% if category == "error" %}
-                        <div class="alert alert-warning alert-dismissible fade show">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                            <li class="{{ category }}">{{ message }}</li>
-                        </div>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
-        </div>
-    </div>
 </div>
 
 {% endblock %}

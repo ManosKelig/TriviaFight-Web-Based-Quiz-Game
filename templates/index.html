@@ -33,19 +33,15 @@
     <div class="row">
         <div class="col">
             {% with messages = get_flashed_messages(with_categories=True) %}
-            {% if messages %}
-                <ul class="list-unstyled">
-                    {% for category, message in messages %}
-                        {% if category == "error" %}
-                        <div class="alert alert-box alert-warning alert-dismissible fade show">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                            <li class="{{ category }}">{{ message }}</li>
-                        </div>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
+                {% for category, message in messages %}
+                    {% if category == "error" %}
+                    <div class="alert alert-box alert-warning alert-dismissible fade show">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endwith %}
         </div>
     </div>
 </div>

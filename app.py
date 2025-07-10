@@ -24,12 +24,10 @@ app.config['SESSION_PERMANENT'] = False #session restarts every time
 app.config['SESSION_USE_SIGNER'] = True #cryptographically sign the session ID cookie
 Session(app)
 
-#Prevent caching of pages so that the user cannot go back and change answers (Chat GPT)
+#Prevent caching of pages so that the user cannot go back and change answers (based on prompt by ChatGPT - modified)
 @app.after_request #applies headers to each response
 def apply_headers(response):
     response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate' #browser doesn't store, needs to revalidate with server before using cached, and revalidates stale responses with server
-    response.headers['Pragma'] = 'no-cache' #older header for backwards compatibility
-    response.headers['Expires'] = '0' #response is already expired (0) so the browser needs to fetch a new one
     return response
 
 #Main menu    

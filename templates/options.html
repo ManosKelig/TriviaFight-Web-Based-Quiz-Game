@@ -48,18 +48,14 @@
     <div class="row mt-3">
         <div class="col">
             {% with messages = get_flashed_messages(with_categories=True) %}
-                {% if messages %}
-                    <ul class="list-unstyled">
-                        {% for category, message in messages %}
-                            {% if category == "success" %}
-                            <div class="alert alert-box alert-success alert-dismissible fade show">
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                <li class="{{ category }}">{{ message }}</li>
-                            </div>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                {% endif %}
+                {% for category, message in messages %}
+                    {% if category == "success" %}
+                    <div class="alert alert-box alert-success alert-dismissible fade show">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
             {% endwith %}
         </div>
     </div>
